@@ -1,0 +1,152 @@
+.main-container {
+background-image: url("fondo.jpg");
+background-size: contain;
+}
+
+.navmain{
+position: fixed;
+width: 100%;
+z-index: 2;
+}
+
+.background{
+    background-image: url("fondo.jpg");
+    background-size: contain;
+    
+}
+
+.py-4{
+
+  z-index: 0;
+
+}
+
+.cont{
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.card-header .card-footer{
+
+    z-index: 0;
+    border: solid 1px;
+}
+
+video{
+
+    width: 100%;
+    
+}
+    
+a:hover{
+    
+    cursor: pointer;
+    
+}
+
+.form-control, .form-control-file {
+    margin-top: 5px;
+}
+  
+.card, .card-body .form-group, form{
+  width: 100%;
+}
+  
+label{
+  
+  font-weight: bold;
+  
+}
+
+.form-control{
+
+    width: 100%;
+}
+
+df-messenger {
+  z-index: 0;
+  --df-messenger-bot-message: #363a40;
+  --df-messenger-button-titlebar-color: #363a40;
+  --df-messenger-chat-background-color: #fafafa;
+  --df-messenger-font-color: white;
+  --df-messenger-send-icon: #363a40;
+  --df-messenger-user-message: #878fac;
+ }  
+
+ .chat {
+  width: 100%;
+  min-width: 5cm;
+}
+
+.chat-body {
+  margin-top: 5px;
+  padding: 1rem;
+  background-color: blanchedalmond;
+  height: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+
+.message{
+  border-radius: 10px;
+  color: #acabab;
+  max-width: 20cm;
+  width: fit-content;
+  margin: 6px auto 0 0;
+}
+
+.message  > * {
+  padding: 0.2rem;
+}
+
+.message > .text {
+  margin: 0 15px;
+}
+
+.message > .time {
+  text-align: right;
+  font-size: 10px;
+  min-width: 60px;
+}
+
+.message > .sender{
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+.btn-delete{
+  height: 30px;   
+  width: 35px;
+  background-image: url("delete.ico");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  float: right;
+}
+
+.chat-input {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+#message {
+  width: 95%;
+}
+
+#send {
+  background-image: url("send.jpg");
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: 25px;
+  background-position: center;  
+  width: 50px;
+  height: 45px;
+  border-radius: 100%;
+}
