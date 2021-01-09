@@ -68,11 +68,6 @@
                                         Iniciar Sesión
                                     </button>
 
-                                    @if (Route::has('password.request'))
-                                    <a class="btn btn-link text-light" href="{{ route('password.request') }}">
-                                        ¿Olvidaste tu Contraseña?
-                                    </a>
-                                    @endif
                                 </div>
                             </div>
                         </form>
