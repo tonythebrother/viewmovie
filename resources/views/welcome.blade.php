@@ -22,9 +22,9 @@
 
         <div class="jumbotron text-center text-light bg-dark">
             <div class="title m-b-md">
-                <h1> 
+                <h1>
                 {{ config('app.name', 'Laravel') }}
-                <img src="http://127.0.0.1:8000/css/favicon.ico" alt="not found image" width="40px">
+                <img src="/css/favicon.ico" alt="not found image" width="40px">
             </h1>
             </div>
 
@@ -61,14 +61,14 @@
                     <br>
                 @endauth
                 </ul>
-            </div>                                
+            </div>
         </div>
-    
+
         <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
                 <df-messenger
                     intent="WELCOME"
                     chat-title="ViewMovie"
-                    chat-icon="css/favicon.ico"
+                    chat-icon="/css/favicon.ico"
                     agent-id="ee0b59f9-6751-4a51-81c2-0a3141b8488c"
                     language-code="es"
                 ></df-messenger>

@@ -1,19 +1,15 @@
 <template>
   <div class="card bg-secondary">
     <div class="card-header bg-dark">
-      <h2 class="text-secondary">
-         Agregar Trailer  
-      </h2>
+      <h2 class="text-secondary">Agregar Trailer</h2>
     </div>
     <div class="card-body text-dark">
-      
-        <form
-          method="post"
-          accept-charset="UTF-8"
-          v-on:submit.prevent="newTrailer()"
-          enctype="multipart/form-data"
-        >
-
+      <form
+        method="post"
+        accept-charset="UTF-8"
+        v-on:submit.prevent="newTrailer()"
+        enctype="multipart/form-data"
+      >
         <div class="form-group">
           <label for="name">Pelicula:</label>
           <input name="name" class="form-control" v-model="nombre" />
@@ -28,7 +24,11 @@
         </div>
         <div class="form-group">
           <label for="protagonistas">Protagonistas:</label>
-          <input name="protagonistas" class="form-control" v-model="protagonistas" />
+          <input
+            name="protagonistas"
+            class="form-control"
+            v-model="protagonistas"
+          />
         </div>
         <div class="form-group">
           <label for="genero">Genero:</label>
@@ -36,35 +36,46 @@
         </div>
         <div class="form-group">
           <label for="sinopsis">Sinopsis:</label>
-          <textarea name="sinopsis" rows="4" class="form-control" v-model="sinopsis"></textarea>
+          <textarea
+            name="sinopsis"
+            rows="4"
+            class="form-control"
+            v-model="sinopsis"
+          ></textarea>
         </div>
         <div class="form-group">
           <label for="estreno"> Estreno:</label>
-          <input type="date" name="estreno" class="form-control date" v-model="estreno" />
+          <input
+            type="date"
+            name="estreno"
+            class="form-control date"
+            v-model="estreno"
+          />
         </div>
         <div class="form-group">
           <label for="file_image">Portada:</label>
-           <input
-              type="file"
-              name="file_image"
-              @change="obtenerImagen"
-              class="form-control-file"
-            />
+          <input
+            type="file"
+            name="file_image"
+            @change="obtenerImagen"
+            class="form-control-file"
+          />
         </div>
         <div class="form-group">
-          <label for="file_video">Trailer:</label> 
+          <label for="file_video">Trailer:</label>
           <input
-              type="file"
-              name="file_video"
-              @change="obtenerVideo"
-              class="form-control-file"
-            />
+            type="file"
+            name="file_video"
+            @change="obtenerVideo"
+            class="form-control-file"
+          />
         </div>
-        </form>
-      </div>
-     <div class="card-footer bg-dark text-secondary text-right">
-            <button type="submit" class="btn btn-success btn-block">Agregar</button>
-          </div>
+         <button type="submit" class="btn btn-success btn-block">
+            Agregar
+          </button>
+
+      </form>
+    </div>
   </div>
 </template>
 
@@ -81,7 +92,7 @@ export default {
       director: "",
       musica: "",
       protagonistas: "",
-      genero: ""
+      genero: "",
     };
   },
   methods: {
@@ -93,9 +104,7 @@ export default {
         this.director.length == 0 ||
         this.musica.length == 0 ||
         this.protagonistas.length == 0 ||
-        this.genero.length == 0 ||
-        this.imagen.length == 0 ||
-        this.video.length == 0
+        this.genero.length == 0
       ) {
         alert("No puede dejar los campos vacios.");
       } else {
@@ -110,18 +119,21 @@ export default {
         form_trailer.append("imagen", this.imagen);
         form_trailer.append("video", this.video);
 
-        axios.post("/trailers", form_trailer).then(response => {
-          this.$emit("new", response.data);
-          alert("Se a agregado exitosamente.");
-        });
+        axios.post("/trailers", form_trailer).then((response) => {
 
-        this.nombre = "";
-        this.sinopsis = "";
-        this.estreno = "";
-        this.director = "";
-        this.musica = "";
-        this.protagonistas = "";
-        this.genero = "";
+          alert("Se a agregado exitosamente.");
+
+          window.location.reload();
+
+          this.nombre = "";
+          this.sinopsis = "";
+          this.estreno = "";
+          this.director = "";
+          this.musica = "";
+          this.protagonistas = "";
+          this.genero = "";
+
+        });
       }
     },
     obtenerImagen(e) {
@@ -129,7 +141,7 @@ export default {
     },
     obtenerVideo(e) {
       this.video = e.target.files[0];
-    }
-  }
+    },
+  },
 };
 </script>

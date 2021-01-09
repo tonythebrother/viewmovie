@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="cont">
-       
-    <users-component user="guest"></users-component>
+
+    <users-component></users-component>
 
     </div>
 @endsection

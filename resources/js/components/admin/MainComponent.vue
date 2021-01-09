@@ -2,7 +2,7 @@
 <div class="content_main row justify-content-center">
         <div class="card bg-dark col-sm-8">
           <div class="card-body">
-            <insert-component @new="addTrailers"></insert-component>
+            <insert-component></insert-component>
           </div>
           <div class="card-body">
             <trailers-component
@@ -13,7 +13,7 @@
               @delete="deleteTrailer(index)"
             ></trailers-component>
           </div>
-        </div>    
+        </div>
   </div>
 </template>
 
@@ -28,14 +28,8 @@ export default {
     axios.get("/trailers").then(response => {
       this.trailers = response.data;
     });
-
-    alert(this.user);
   },
-
   methods: {
-    addTrailers(trailer) {
-      this.trailers.push(trailer);
-    },
     updateTrailer(index, trailer) {
       this.trailers.splice(index, 1);
       this.trailers.push(trailer);

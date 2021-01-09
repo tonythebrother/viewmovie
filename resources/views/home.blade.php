@@ -8,7 +8,7 @@
 
         @else
 
-        <users-component user="{{ auth()->user()->email }}"></users-component>
+        <users-component></users-component>
 
         @endif
     </div>

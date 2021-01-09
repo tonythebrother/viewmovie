@@ -26,28 +26,27 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm navmain">
             <div class="container">
-               
-            <a class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'Laravel') }}
-                            <img src="http://localhost:8000/css/favicon.ico" alt="not found image" width="20px">
-                        </a>
 
+            <a class="navbar-brand" href="{{ url('/') }}">
+                {{ config('app.name', 'Laravel') }}
+                <img src="/css/favicon.ico" alt="not found image" width="20px">
+            </a>
+
+            @guest
 
             <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+            </button>
 
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <ul class="navbar-nav mr-auto">
 
-                    @guest
-
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">
-                                Iniciar Sesión    
+                                Iniciar Sesión
                             </a>
                         </li>
 
@@ -56,21 +55,11 @@
                                 Registrarse
                             </a>
                         </li>
-                    @else
 
-
-                    <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/home') }}">
-                            Trailers
-                        </a>
-                    </li>             
-
-                    @endguest
-
-                    </ul>                      
+                    </ul>
                   </div>
 
-                @guest
+
                 @else
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
@@ -103,7 +92,7 @@
                 <df-messenger
                     intent="WELCOME"
                     chat-title="ViewMovie"
-                    chat-icon="css/favicon.ico"
+                    chat-icon="/css/favicon.ico"
                     agent-id="ee0b59f9-6751-4a51-81c2-0a3141b8488c"
                     language-code="es"
                 ></df-messenger>

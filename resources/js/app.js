@@ -9,9 +9,6 @@ Vue.component('trailers-component', require('./components/admin/TrailersComponen
 Vue.component('users-component', require('./components/user/MainUserComponent.vue').default);
 Vue.component('seetrailers-component', require('./components/user/SeeTrailersComponent.vue').default);
 
-Vue.component('comentario-component', require('./components/comentarios/ComentariosComponent.vue').default);
-Vue.component('texto-component', require('./components/comentarios/ComentariosTextoComponent.vue').default);
-
 const app = new Vue({
     el: '#app',
 });
